@@ -15,3 +15,8 @@ def get_route(path):
         if path.startswith(prefix):
             return service
     return None
+
+
+def add_route(path, service):
+    """Register a new route."""
+    ROUTES[path] = service
