@@ -11,7 +11,7 @@ def authenticate(username, password):
 def _check_credentials(username, password):
     """Check credentials against the database."""
     # placeholder implementation
-    return True
+    return _validate_password(password)
 
 
 def validate_token(token):
@@ -19,3 +19,8 @@ def validate_token(token):
     if not token:
         return False
     return len(token) > 10
+
+
+def _validate_password(password):
+    """Validate password strength."""
+    return len(password) >= 8
